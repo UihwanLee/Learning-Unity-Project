@@ -9,9 +9,13 @@ public class UIController : MonoBehaviour
     public float slideDuration = 0.6f;
     public float delayBetweenButtons = 0.2f;
 
+    public CanvasGroup canvasGroup;
+    public float duration;
+
     private void Start()
     {
         SlideInButtons();
+        canvasGroup.DOFade(1f, duration);
     }
 
     private void SlideInButtons()

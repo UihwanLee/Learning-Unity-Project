@@ -172,6 +172,8 @@ MonoBehaviour:
   - {fileID: 1373415738}
   slideDuration: 0.6
   delayBetweenButtons: 0.2
+  canvasGroup: {fileID: 424535187}
+  duration: 5
 --- !u!1 &283223971
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,6 +358,7 @@ GameObject:
   - component: {fileID: 424535185}
   - component: {fileID: 424535184}
   - component: {fileID: 424535183}
+  - component: {fileID: 424535187}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -446,6 +449,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &424535187
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424535182}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
