@@ -174,6 +174,9 @@ MonoBehaviour:
   delayBetweenButtons: 0.2
   canvasGroup: {fileID: 424535187}
   duration: 5
+  playButton: {fileID: 1339546248}
+  settingButton: {fileID: 706368022}
+  exitButton: {fileID: 1373415739}
 --- !u!1 &283223971
 GameObject:
   m_ObjectHideFlags: 0
