@@ -11,7 +11,15 @@ public class CubeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SequenceAnim();
+        OnCompleted();
+    }
+
+    private void OnCompleted()
+    {
+        cube.transform.DOMoveX(5f, 2f).OnComplete(() =>
+        {
+            transform.DOMoveY(3f, 1f);
+        });
     }
 
     private void MoveCube()
