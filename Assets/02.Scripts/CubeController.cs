@@ -11,15 +11,33 @@ public class CubeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SequenceAnim();
+    }
+
+    private void MoveCube()
+    {
         myTween = cube.transform.DOMoveX(5f, 2f)
-            .SetLoops(-1, LoopType.Yoyo)
-            .SetEase(Ease.OutSine);
+        .SetLoops(-1, LoopType.Yoyo)
+        .SetEase(Ease.OutSine);
+    }
+
+    private void SequenceAnim()
+    {
+        Sequence seq = DOTween.Sequence();
+        seq.Append(cube.transform.DOMoveX(10, 3f))
+            .Join(cube.transform.DOScale(new Vector3(5, 5, 5), 10f))
+            .Join(cube.GetComponent<Renderer>().material.DOColor(Color.green, 5f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+
+    }
+
+    private void InputFunc()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             myTween.Pause();
             Debug.Log("Paused");
