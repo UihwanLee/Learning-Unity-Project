@@ -98,11 +98,15 @@ namespace Spine.Unity.Examples {
 				const float jumpTime = 1.2f;
 				const float half = jumpTime * 0.5f;
 				const float jumpPower = 20f;
+
+				// 점프 동작
 				for (float t = 0; t < half; t += Time.deltaTime) {
 					float d = jumpPower * (half - t);
 					transform.Translate((d * Time.deltaTime) * Vector3.up);
 					yield return null;
 				}
+
+				// 점프 후 내려오는 동작
 				for (float t = 0; t < half; t += Time.deltaTime) {
 					float d = jumpPower * t;
 					transform.Translate((d * Time.deltaTime) * Vector3.down);
@@ -116,6 +120,7 @@ namespace Spine.Unity.Examples {
 
 	}
 
+	// 애니메이션 상태를 표시하는 Type
 	public enum SpineBeginnerBodyState {
 		Idle,
 		Running,

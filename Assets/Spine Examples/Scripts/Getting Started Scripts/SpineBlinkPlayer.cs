@@ -35,14 +35,17 @@ namespace Spine.Unity.Examples {
 	public class SpineBlinkPlayer : MonoBehaviour {
 		const int BlinkTrack = 1;
 
+		// Spine Animation 에셋
 		public AnimationReferenceAsset blinkAnimation;
 		public float minimumDelay = 0.15f;
 		public float maximumDelay = 3f;
 
 		IEnumerator Start () {
+			// SkeletonAnimation 컴포넌트를 찾아서 설정
 			SkeletonAnimation skeletonAnimation = GetComponent<SkeletonAnimation>();
 			if (skeletonAnimation == null) yield break;
 			while (true) {
+				// Skeleton 애니메이션 blinkAnimation으로 설정
 				skeletonAnimation.AnimationState.SetAnimation(SpineBlinkPlayer.BlinkTrack, blinkAnimation, false);
 				yield return new WaitForSeconds(Random.Range(minimumDelay, maximumDelay));
 			}

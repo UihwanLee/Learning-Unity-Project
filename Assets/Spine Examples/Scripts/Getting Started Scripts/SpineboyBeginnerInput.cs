@@ -41,6 +41,7 @@ namespace Spine.Unity.Examples {
 		public SpineboyBeginnerModel model;
 
 		void OnValidate () {
+			// 외부 스크립트 참조하기
 			if (model == null)
 				model = GetComponent<SpineboyBeginnerModel>();
 		}
@@ -49,9 +50,11 @@ namespace Spine.Unity.Examples {
 		void Update () {
 			if (model == null) return;
 
+			// 방향키가 감지되면 TryMove 호출
 			float currentHorizontal = Input.GetAxisRaw(horizontalAxis);
 			model.TryMove(currentHorizontal);
 
+			// 입력에 따른 애니메이션 재생
 			if (Input.GetButton(attackButton))
 				model.TryShoot();
 
